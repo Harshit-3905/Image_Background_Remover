@@ -4,16 +4,40 @@
 }
 
 body {
-    background-color: #090909;
+    background-color: var(--background, #090909);
+    color: var(--text, white);
+    --imgbackgound: #000000;
 }
+
 
 /* header start */
 
 header {
-    height: 10vh;
-    color: white;
+    height: 100px;
+    color: var(--text);
     text-align: center;
-    background-color: #4b5043;
+}
+
+#headercontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100vw;
+}
+
+#theme-button {
+    position: absolute;
+    right: 75px;
+    border: 1px solid #17795E;
+    background-color: #209978;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
 }
 
 #heading {
@@ -27,12 +51,37 @@ header {
 #maincontainer {
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
 }
+
+@media (max-width: 768px) {
+    #maincontainer {
+        height: fit-content;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #headercontainer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        width: 100vw;
+    }
+
+    #theme-button {
+        position: static;
+        right: 0;
+        margin-top: 20px;
+    }
+}
+
 
 #upload {
     height: 100%;
     width: 35vw;
-    color: white;
+    color: var(--text);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,7 +119,7 @@ header {
 
 #download img {
     height: 300px;
-    background-color: #fff;
+    background-color: var(--imgbackgound);
 }
 
 #download button {
@@ -79,14 +128,13 @@ header {
 }
 
 main {
-    height: 85vh;
+    height: 800px;
 }
 
 /* main end */
 footer {
-    height: 5vh;
     text-align: center;
-    color: white;
+    color: var(--text);
 }
 
 #downloadbutton {
@@ -153,7 +201,7 @@ footer {
 #convertbutton {
     font-family: inherit;
     font-size: 20px;
-    background: royalblue;
+    background: #17795E;
     color: white;
     padding: 0.7em 1em;
     padding-left: 0.9em;
@@ -201,4 +249,10 @@ footer {
     to {
         transform: translateY(-0.1em);
     }
+}
+
+body.dark-mode {
+    background-color: var(--background, #ffffff);
+    color: var(--text, #090909);
+    --imgbackgound: #ffffff;
 }
