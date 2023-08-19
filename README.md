@@ -1,1 +1,1 @@
-# CodeClauseInternship_Image_Background_Remover
+# Image_Background_Remover
