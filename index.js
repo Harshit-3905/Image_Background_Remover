@@ -37,3 +37,14 @@ download.addEventListener("click",()=>{
       anchorElement.click();
       document.body.removeChild(anchorElement);
 })
+
+const theme = document.querySelector("#theme-button");
+theme.addEventListener("click",()=>{
+    document.body.classList.toggle("dark-mode");
+    if(document.body.classList.contains("dark-mode")){
+       theme.innerHTML = "Dark Mode";
+   }
+   else{
+       theme.innerHTML = "Light Mode";
+    }
+})
